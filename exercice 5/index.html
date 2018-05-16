@@ -6,11 +6,26 @@
   </head>
   <body>
     <div class="conteneur">
-      <img src="images/image1.jpg" id="image1" />
-      <img src="images/image2.jpg" id="image2" />
-      <img src="images/image3.jpg" id="image3" />
-      <img src="images/image4.jpg" id="image4" />
-      <img src="images/image5.jpg" id="image5" />
+      <img src="images/image1.jpg" id="image1" class="ImageAChanger" onmousemove="ChangerImage()"/>
+      <img src="images/image2.jpg" id="image2" class="ImageAChanger" onmousemove="ChangerImage()"/>
+      <img src="images/image3.jpg" id="image3" class="ImageAChanger" onmousemove="ChangerImage()"/>
+      <img src="images/image4.jpg" id="image4" class="ImageAChanger" onmousemove="ChangerImage()"/>
+      <img src="images/image5.jpg" id="image5" class="ImageAChanger" onmousemove="ChangerImage()"/>
     </div>
+    <script type="text/javascript">
+        var Image = document.getElementsByClassName('ImageAChanger')[0].id;
+        alert(Image);
+        function ChangerImage(){
+            switch (Image){
+                case "image1":
+                    document.getElementById('image1').src="images/image1_2.jpg";
+                    break;
+                case "image2":
+                    document.getElementById('image2').src="images/image2_2.jpg";
+                    break;
+                default:
+            }
+        }
+    </script>
   </body>
 </html>
