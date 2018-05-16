@@ -6,26 +6,56 @@
   </head>
   <body>
     <div class="conteneur">
-      <img src="images/image1.jpg" id="image1" class="ImageAChanger" onmousemove="ChangerImage()"/>
-      <img src="images/image2.jpg" id="image2" class="ImageAChanger" onmousemove="ChangerImage()"/>
-      <img src="images/image3.jpg" id="image3" class="ImageAChanger" onmousemove="ChangerImage()"/>
-      <img src="images/image4.jpg" id="image4" class="ImageAChanger" onmousemove="ChangerImage()"/>
-      <img src="images/image5.jpg" id="image5" class="ImageAChanger" onmousemove="ChangerImage()"/>
+      <img src="images/image1.jpg" id="image1" onmouseover="ChangerImage(this.id)"/>
+      <img src="images/image2.jpg" id="image2" onmouseover="ChangerImage(this.id)"/>
+      <img src="images/image3.jpg" id="image3" onmouseover="ChangerImage(this.id)"/>
+      <img src="images/image4.jpg" id="image4" onmouseover="ChangerImage(this.id)"/>
+      <img src="images/image5.jpg" id="image5" onmouseover="ChangerImage(this.id)"/>
     </div>
     <script type="text/javascript">
-        var Image = document.getElementsByClassName('ImageAChanger')[0].id;
-        alert(Image);
-        function ChangerImage(){
-            switch (Image){
-                case "image1":
+           /* var Image1 = document.getElementById('image1').addEventListener('mouseover', ChangerImage(this.id), false);
+            var Image2 = document.getElementById('image2').addEventListener('mouseover', ChangerImage(this.id), false);
+            var Image3 = document.getElementById('image3').addEventListener('mouseover', ChangerImage(this.id), false);
+            var Image4 = document.getElementById('image4').addEventListener('mouseover', ChangerImage(this.id), false);
+            var Image5 = document.getElementById('image5').addEventListener('mouseover', ChangerImage(this.id), false);*/
+
+            function ChangerImage(MonImage){
+                if (MonImage == 'image1') {
                     document.getElementById('image1').src="images/image1_2.jpg";
-                    break;
-                case "image2":
+                } else if (MonImage == 'image2'){
                     document.getElementById('image2').src="images/image2_2.jpg";
-                    break;
-                default:
+                } else if (MonImage == 'image3'){
+                    document.getElementById('image3').src="images/image3_2.jpg";
+                } else if (MonImage == 'image4'){
+                    document.getElementById('image4').src="images/image4_2.jpg";
+                } else if (MonImage == 'image5') {
+                    document.getElementById('image5').src="images/image5_2.jpg";
+                }else{
+                    alert("Erreur");
+                }
+                console.log(MonImage);
             }
-        }
+        /*function ChangerImage(MonImage){
+            var Image1 = document.getElementById('image1');
+            var Image2 = document.getElementById('image2');
+            var Image3 = document.getElementById('image3');
+            var Image4 = document.getElementById('image4');
+            var Image5 = document.getElementById('image5');
+            console.log(Image1);
+            if (Image1) {
+                MonImage.src="images/image1_2.jpg";
+            } else if (Image2){
+                MonImage.src="images/image2_2.jpg";
+            } else if (Image3){
+                MonImage.src="images/image3_2.jpg";
+            } else if (Image4){
+                MonImage.src="images/image4_2.jpg";
+            } else if (Image5) {
+                MonImage.src="images/image5_2.jpg";
+            }else{
+                alert("Erreur");
+            }
+        }*/
     </script>
   </body>
 </html>
